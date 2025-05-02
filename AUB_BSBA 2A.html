@@ -1,0 +1,3089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asia United Bank Corporation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #D62C1F;
+            --primary-light: #E04B40;
+            --secondary-color: #F8CD39;
+            --accent-color: #FFF3D6;
+            --text-color: #333333;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            background-color: var(--light-gray);
+            color: var(--text-color);
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+        }
+        
+        .sidebar {
+            width: 280px;
+            height: 100vh;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            position: fixed;
+            overflow-y: auto;
+            box-shadow: var(--shadow);
+            z-index: 100;
+        }
+        
+        .logo-container {
+            padding: 30px 20px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .logo {
+            max-width: 200px;
+            margin-bottom: 15px;
+            transition: var(--transition);
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .tagline {
+            font-style: italic;
+            font-size: 14px;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+            color: var(--secondary-color);
+            font-weight: 300;
+        }
+        
+        .menu {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .menu li {
+            padding: 12px 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+        
+        .menu li:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding-left: 30px;
+        }
+        
+        .menu li.active {
+            border-left: 4px solid var(--secondary-color);
+            background-color: rgba(255, 255, 255, 0.1);
+            font-weight: 500;
+        }
+        
+        .content {
+            margin-left: 280px;
+            padding: 40px;
+            width: calc(100% - 280px);
+            min-height: 100vh;
+        }
+        
+        .section {
+            background-color: var(--white);
+            margin-bottom: 40px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s forwards;
+            border-top: 5px solid var(--primary-color);
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        
+        table, th, td {
+            border: 1px solid #eee;
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+        
+        th {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+            color: white;
+            font-weight: 500;
+        }
+        
+        tr:nth-child(even) {
+            background-color: rgba(255, 243, 214, 0.4);
+        }
+        
+        tr:hover {
+            background-color: rgba(255, 243, 214, 0.7);
+        }
+        
+        .profile-card {
+            display: flex;
+            margin-bottom: 25px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(214, 44, 31, 0.1);
+        }
+        
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border-color: var(--secondary-color);
+        }
+        
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            margin-right: 25px;
+            border-radius: 60px;
+            border: 3px solid var(--accent-color);
+        }
+        
+        .profile-img-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 25px;
+        }
+        
+        .profile-info h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .team-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 30px 0;
+            gap: 30px;
+        }
+        
+        .team-member {
+            width: 300px;
+            text-align: center;
+            margin-bottom: 30px;
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .team-member:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+        }
+        
+        .team-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-size: 12px;
+            position: relative;
+            overflow: hidden;
+            border: 5px solid var(--white);
+            box-shadow: 0 0 20px rgba(0,0,0,0.08);
+        }
+        
+        .team-member h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .disclaimer {
+            background-color: rgba(248, 205, 57, 0.1);
+            padding: 20px;
+            border-left: 4px solid var(--secondary-color);
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .reference-item {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .reference-item:before {
+            content: "\f105";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+        
+        a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+        
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(214, 44, 31, 0.2);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(214, 44, 31, 0.3);
+            text-decoration: none;
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #F4B41A 100%);
+            color: var(--text-color);
+            box-shadow: 0 3px 10px rgba(248, 205, 57, 0.2);
+        }
+        
+        .btn-secondary:hover {
+            box-shadow: 0 5px 15px rgba(248, 205, 57, 0.3);
+            color: var(--text-color);
+        }
+        
+        /* Enhanced Card Styles */
+        .feature-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--primary-color);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .feature-card:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, rgba(248, 205, 57, 0.1) 0%, rgba(214, 44, 31, 0.05) 100%);
+            border-radius: 0 0 0 100%;
+            z-index: 0;
+        }
+        
+        .feature-card h3 {
+            margin-top: 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .feature-card p {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Enhanced Timeline Styles */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 30px auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+            top: 0;
+            bottom: 0;
+            left: 100px;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+            padding-left: 150px;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            left: 100px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            z-index: 1;
+            margin-left: -10px;
+            box-shadow: 0 0 0 5px rgba(214, 44, 31, 0.2);
+        }
+        
+        .timeline-date {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 90px;
+            text-align: right;
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            position: relative;
+            border-left: 3px solid var(--secondary-color);
+        }
+        
+        /* Branch Styles */
+        .branches-container {
+            margin-top: 30px;
+        }
+        
+        .branch-region {
+            margin-bottom: 30px;
+        }
+        
+        .branch-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .branch-item {
+            display: flex;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            padding: 15px;
+            transition: var(--transition);
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        .branch-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            border-left-color: var(--secondary-color);
+        }
+        
+        .branch-item i {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        .branch-details h4 {
+            margin: 0 0 10px 0;
+            color: var(--primary-color);
+        }
+        
+        .branch-details p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+        
+        .branch-finder {
+            background: linear-gradient(135deg, rgba(214, 44, 31, 0.05) 0%, rgba(248, 205, 57, 0.1) 100%);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .branch-finder h3 {
+            margin: 0;
+            margin-right: 20px;
+        }
+        
+        .branch-finder p {
+            margin: 10px 0;
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        /* Capital Structure Styles */
+        .capital-stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .capital-stat-item {
+            flex: 1;
+            min-width: 200px;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .capital-stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .capital-stat-item .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px;
+        }
+        
+        .capital-stat-item .stat-label {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-bottom: 5px;
+        }
+        
+        .capital-stat-item .stat-desc {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* Hero Banner Enhanced */
+        .hero-banner {
+            background: linear-gradient(135deg, rgba(214, 44, 31, 0.05) 0%, rgba(248, 205, 57, 0.1) 100%);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-text {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-text img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .slogan {
+            font-size: 1.8rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .slogan:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        .highlight {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+        
+        /* Organization Chart */
+        .org-chart-container {
+            margin: 30px 0;
+        }
+        
+        .org-chart {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .org-level {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .org-level::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 30px;
+            background-color: var(--primary-color);
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .org-level:last-child::after {
+            display: none;
+        }
+        
+        .org-box {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 220px;
+            box-shadow: 0 5px 15px rgba(214, 44, 31, 0.2);
+            margin: 0 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .org-box:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 0 0 0 100%;
+        }
+        
+        .org-box h3 {
+            color: white;
+            margin: 0 0 10px 0;
+            font-size: 1.2rem;
+            position: relative;
+        }
+        
+        .org-box p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.9);
+            position: relative;
+        }
+        
+        .department-level {
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .subsidiaries-org {
+            background: linear-gradient(135deg, rgba(248, 205, 57, 0.1) 0%, rgba(214, 44, 31, 0.05) 100%);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .subsidiaries-org:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+            border-radius: 5px 0 0 5px;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 1024px) {
+            .sidebar {
+                width: 250px;
+            }
+            .content {
+                margin-left: 250px;
+                width: calc(100% - 250px);
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            .content {
+                margin-left: 0;
+                width: 100%;
+                padding: 20px;
+            }
+            .menu {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .menu li {
+                flex: 1 1 50%;
+                text-align: center;
+                padding: 10px;
+            }
+            
+            .timeline::after {
+                left: 50px;
+            }
+            
+            .timeline-item {
+                padding-left: 100px;
+            }
+            
+            .timeline-dot {
+                left: 50px;
+            }
+            
+            .timeline-date {
+                width: 45px;
+                font-size: 0.9rem;
+            }
+            
+            .branch-list,
+            .capital-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .org-level {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .org-box {
+                margin-bottom: 15px;
+                width: 100%;
+            }
+            
+            .department-level {
+                flex-direction: column;
+            }
+        }
+        
+        /* Additional animations */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Floating button */
+        .floating-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(214, 44, 31, 0.3);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .floating-button.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .floating-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(214, 44, 31, 0.4);
+        }
+        
+        /* Company Overview Styles */
+        .company-header {
+            margin-bottom: 30px;
+        }
+        
+        .company-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+        
+        .stat-box {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            flex: 1;
+            min-width: 200px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            border-left: 3px solid var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .stat-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .stat-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .stat-title {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #777;
+        }
+        
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .company-address {
+            display: flex;
+            align-items: center;
+            background-color: var(--accent-color);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        
+        .company-address i {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+        
+        .company-address p {
+            margin: 0;
+        }
+        
+        .company-description {
+            margin-bottom: 30px;
+        }
+        
+        .company-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+            justify-content: space-between;
+        }
+        
+        .highlight-card {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+            border-top: 4px solid var(--secondary-color);
+        }
+        
+        .highlight-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .highlight-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto 15px;
+            color: white;
+            font-size: 1.8rem;
+        }
+        
+        .highlight-content {
+            padding: 0 20px 20px;
+            text-align: center;
+        }
+        
+        .highlight-content h3 {
+            font-size: 1.2rem;
+            margin: 15px 0 10px;
+        }
+        
+        .highlight-content p {
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .action-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        /* Executive and Management Styles */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
+            margin: 25px 0 40px;
+        }
+        
+        .executive-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .executive-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .exec-img {
+            height: 150px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .exec-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .executive-card:hover .exec-img img {
+            transform: scale(1.05);
+        }
+        
+        .exec-info {
+            padding: 20px;
+            position: relative;
+        }
+        
+        .exec-info:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        .exec-info h4 {
+            margin: 10px 0 5px;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .exec-info p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #777;
+        }
+        
+        .management-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 25px 0;
+        }
+        
+        .management-column {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .management-item {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border-radius: 8px;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        .management-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-left-color: var(--secondary-color);
+        }
+        
+        .manager-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .manager-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .manager-info h4 {
+            margin: 0;
+            font-size: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .management-note {
+            background-color: var(--accent-color);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        /* External Link Styling */
+        .external-link {
+            background-color: var(--accent-color);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            border-left: 4px solid var(--secondary-color);
+            transition: var(--transition);
+        }
+        
+        .external-link:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+        
+        .external-link a {
+            display: block;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .external-link a i {
+            margin-left: 5px;
+            font-size: 0.9em;
+        }
+        
+        .external-link a:hover {
+            color: var(--primary-light);
+        }
+        
+        /* Annual Reports Styling */
+        .annual-reports {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .report-item {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .report-item .btn {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+            border-radius: 8px;
+            padding: 12px 15px;
+            color: white;
+            font-weight: 500;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        
+        .report-item .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(214, 44, 31, 0.2);
+            text-decoration: none;
+            color: white;
+        }
+        
+        .report-item .btn i {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-container">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRicHxdw4O1whZodBPEXG_TIaEJ8-gs27pjoQ&s" alt="AUB Logo" class="logo">
+            <div class="tagline">#Bank on us, anytime, anywhere</div>
+        </div>
+        <ul class="menu" id="menu">
+            <li onclick="showSection('company-info')" class="active">Company Overview</li>
+            <li onclick="showSection('background')">Background & History</li>
+            <li onclick="showSection('corporate-profile')">Corporate Profile</li>
+            <li onclick="showSection('vision-mission')">Vision & Mission</li>
+            <li onclick="showSection('branches')">Branches & Offices</li>
+            <li onclick="showSection('business-scope')">Business Scope</li>
+            <li onclick="showSection('products-services')">Products & Services</li>
+            <li onclick="showSection('financial-highlights')">Financial Highlights</li>
+            <li onclick="showSection('awards')">Awards & Recognition</li>
+            <li onclick="showSection('org-structure')">Organizational Structure</li>
+            <li onclick="showSection('board-directors')">Board of Directors</li>
+            <li onclick="showSection('management-committee')">Management Committee</li>
+            <li onclick="showSection('capital-structure')">Capital Structure</li>
+            <li onclick="showSection('corporate-governance')">Corporate Governance</li>
+            <li onclick="showSection('csr')">Corporate Social Responsibility</li>
+            <li onclick="showSection('financial-statements')">Financial Statements</li>
+            <li onclick="showSection('references')">References</li>
+            <li onclick="showSection('disclaimer')">Disclaimer</li>
+            <li onclick="showSection('team')">Our Team</li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <!-- Company Name -->
+        <section id="company-info" class="section">
+            <h1>Asia United Bank Corporation <span class="highlight">(AUB)</span></h1>
+            <div class="company-intro">
+                <div class="company-header">
+                    <div class="company-stats">
+                        <div class="stat-box">
+                            <div class="stat-icon"><i class="fas fa-building"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-title">Founded</span>
+                                <span class="stat-value">1997</span>
+                            </div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-icon"><i class="fas fa-university"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-title">Bank Type</span>
+                                <span class="stat-value">Universal</span>
+                            </div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-title">Branches</span>
+                                <span class="stat-value">265+</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="company-address">
+                    <i class="fas fa-location-dot"></i>
+                    <p><strong>Headquartered at:</strong> Joy-Nostalg Center, 17 ADB Avenue, Ortigas Center, Pasig City, Philippines</p>
+                </div>
+                
+                <div class="company-description">
+                    <p>Asia United Bank Corporation (AUB) is a universal bank in the Philippines that provides a wide range of banking and financial services. Established in 1997, AUB has rapidly grown to become one of the fastest-growing banks in the country, offering innovative products and excellent customer service.</p>
+                    <p>As the banking arm of the Rebisco Group of Companies, AUB combines financial strength with a customer-centric approach to meet the evolving needs of individuals, businesses, and institutions.</p>
+                </div>
+                
+                <div class="hero-banner">
+                    <div class="hero-text">
+                        <img src="https://www.itechsolutionph.com/uploads/5/9/8/9/5989938/asia-united-bank-corporation-still-among-fastest-growing-banks_orig.jpg" alt="AUB Bank Building">
+                        <p class="slogan">Banking Excellence Since 1997</p>
+                        <p>A universal bank dedicated to financial strength and innovative services.</p>
+                    </div>
+                </div>
+                
+                <div class="company-highlights">
+                    <div class="highlight-card">
+                        <div class="highlight-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="highlight-content">
+                            <h3>Strong Financial Performance</h3>
+                            <p>21% Compounded Annual Growth Rate (CAGR) since becoming a publicly listed universal bank in 2013.</p>
+                        </div>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon"><i class="fas fa-shield-alt"></i></div>
+                        <div class="highlight-content">
+                            <h3>Solid Capital Position</h3>
+                            <p>17.8% Capital Adequacy Ratio (CAR), well above the 10% regulatory minimum requirement.</p>
+                        </div>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon"><i class="fas fa-users"></i></div>
+                        <div class="highlight-content">
+                            <h3>Excellence in Service</h3>
+                            <p>Multiple awards for outstanding banking services and innovative financial products.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <a href="#vision-mission" onclick="showSection('vision-mission')" class="btn">Our Vision & Mission</a>
+                    <a href="#corporate-profile" onclick="showSection('corporate-profile')" class="btn btn-secondary">Corporate Profile</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Background and History -->
+        <section id="background" class="section hidden">
+            <h2>Background & History</h2>
+            <div class="external-link">
+                <a href="https://www.aub.com.ph/aboutUs/company" target="_blank">View Official Company Background <i class="fas fa-external-link-alt"></i></a>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">1997</div>
+                    <div class="timeline-content">
+                        <h3>Foundation</h3>
+                        <p>Asia United Bank Corporation (AUB) was granted a full-branch commercial bank license and was registered with the Securities and Exchange Commission (SEC) on October 3, 1997.</p>
+                        <p>AUB commenced operations on October 31, 1997 under the Monetary Board (MB) Resolution No. 1149 dated September 3, 1997.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2012</div>
+                    <div class="timeline-content">
+                        <h3>Expansion</h3>
+                        <p>AUB obtained approval from the Bangko Sentral ng Pilipinas (BSP) to upgrade its license into expanded commercial banking status.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2013</div>
+                    <div class="timeline-content">
+                        <h3>Universal Banking</h3>
+                        <p>The Bank was granted authority to operate as a universal bank under MB Resolution No. 356 dated February 28, 2013.</p>
+                        <p>AUB joined the league of Philippine Banks that have become publicly listed.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Present</div>
+                    <div class="timeline-content">
+                        <h3>Continued Growth</h3>
+                        <p>Today, AUB is a publicly listed company with three principal/substantial stockholders: Republic Biscuit Corporation, Kuo Yu Philippines Holdings Corporation, and Lambda Holdings Corporation.</p>
+                        <p>AUB continues to grow by building a strong and loyal client base through its careful and focused client generation activities and technological innovations.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="foundation-info">
+                <h3>Our Foundation</h3>
+                <p>AUB began as a joint venture between a consortium of Filipino Industrialists (namely, Jacinto L. Ng, Sr., Luis U. Ang, and Jose S. Sandejas) and Taiwanese investment banks (namely, China United Trust & Investment Corporation, and China Development Industrial Bank).</p>
+            </div>
+        </section>
+
+        <!-- Corporate Profile -->
+        <section id="corporate-profile" class="section hidden">
+            <h2>Corporate Profile</h2>
+            <div class="external-link">
+                <a href="https://www.aub.com.ph/aboutUs/company" target="_blank">View Official Corporate Profile <i class="fas fa-external-link-alt"></i></a>
+            </div>
+            <div class="profile-intro">
+                <p>Asia United Bank Corporation (AUB) is a universal bank in the Philippines and licensed by the Bangko Sentral ng Pilipinas (BSP). AUB is the banking arm of the Rebisco Group of Companies, Inc.</p>
+                <div class="stat-highlight">
+                    <div class="stat">
+                        <span class="stat-number">13<sup>th</sup></span>
+                        <span class="stat-label">Largest Bank in the Philippines by Assets</span>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Subsidiaries</h3>
+            <div class="table-responsive">
+                <table>
+                    <tr>
+                        <th>Subsidiary</th>
+                        <th>Principal Activities</th>
+                        <th>Country of Incorporation</th>
+                        <th>% Ownership</th>
+                    </tr>
+                    <tr>
+                        <td>Rural Bank of Angeles</td>
+                        <td>Rural Banking</td>
+                        <td>Philippines</td>
+                        <td><span class="ownership-percentage">99.54%</span></td>
+                    </tr>
+                    <tr>
+                        <td>Cavite United Rural Bank</td>
+                        <td>Rural Banking</td>
+                        <td>Philippines</td>
+                        <td><span class="ownership-percentage">100.00%</span></td>
+                    </tr>
+                    <tr>
+                        <td>Asia United Leasing and Finance Corp (AULFC)</td>
+                        <td>Leasing and Financing</td>
+                        <td>Philippines</td>
+                        <td><span class="ownership-percentage">39.00%</span></td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- Vision, Mission, etc. -->
+        <section id="vision-mission" class="section hidden">
+            <h2>Vision, Mission, and Values</h2>
+            
+            <div class="vision-container">
+                <div class="vision-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <div class="vision-content">
+                    <h3>Our Vision</h3>
+                    <p>We are committed to be the bank of choice, known for financial strength and superior delivery of innovative products and services, driven towards total customer satisfaction.</p>
+                </div>
+            </div>
+            
+            <div class="mission-container">
+                <div class="mission-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <div class="mission-content">
+                    <h3>Our Mission</h3>
+                    <p>We shall be guided by our chosen corporate values of Commitment, Integrity, Excellence, Leadership, and Teamwork in:</p>
+                    <ul>
+                        <li>developing long-term partnerships with clients through the delivery of responsive, innovative, and value-added products and services;</li>
+                        <li>providing the delivery channels that are relevant to our market to ensure convenience and increase the bank's accessibility;</li>
+                        <li>creating a dynamic and meritocratic employee work environment that fosters mutual respect, provides professional and personal growth, and encourages creativity;</li>
+                        <li>dealing fairly with business partners; and:</li>
+                        <li>ensuring optimum returns for our stockholders.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="values-container">
+                <h3>Core Values</h3>
+                <div class="values-grid">
+                    <div class="value-item">
+                        <div class="value-icon">C</div>
+                        <div class="value-name">Commitment</div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">I</div>
+                        <div class="value-name">Integrity</div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">E</div>
+                        <div class="value-name">Excellence</div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">L</div>
+                        <div class="value-name">Leadership</div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">T</div>
+                        <div class="value-name">Teamwork</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Branches and Offices -->
+        <section id="branches" class="section hidden">
+            <h2>Branches and Offices</h2>
+            <div class="external-link">
+                <a href="https://www.aub.com.ph/branch" target="_blank">View Complete Branch Network <i class="fas fa-external-link-alt"></i></a>
+            </div>
+            <p>AUB has a network of 265 branches including micro-banking offices as of 2023. The bank's head office is located at Joy-Nostalg Center, 17 ADB Avenue, Ortigas Center, Pasig City, Philippines.</p>
+            
+            <div class="branches-container">
+                <div class="branch-region">
+                    <h3>Metro Manila Branches</h3>
+                    <div class="branch-list">
+                        <div class="branch-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="branch-details">
+                                <h4>Head Office - Ortigas Center</h4>
+                                <p>Joy-Nostalg Center, 17 ADB Avenue, Ortigas Center, Pasig City</p>
+                                <p><strong>Contact:</strong> (632) 8282-8888</p>
+                            </div>
+                        </div>
+                        <div class="branch-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="branch-details">
+                                <h4>Makati - Ayala Avenue</h4>
+                                <p>Ground Floor, 6780 Ayala Avenue, Makati City</p>
+                                <p><strong>Contact:</strong> (632) 8840-2668</p>
+                            </div>
+                        </div>
+                        <div class="branch-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="branch-details">
+                                <h4>Binondo - Quintin Paredes</h4>
+                                <p>Ground Floor, Co Siu Tek Building, 891 Quintin Paredes St., Binondo, Manila</p>
+                                <p><strong>Contact:</strong> (632) 8245-7118</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="branch-region">
+                    <h3>Luzon Branches</h3>
+                    <div class="branch-list">
+                        <div class="branch-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="branch-details">
+                                <h4>Angeles City</h4>
+                                <p>Ground Floor, Jenra Mall, MacArthur Highway, Angeles City, Pampanga</p>
+                                <p><strong>Contact:</strong> (045) 887-3334</p>
+                            </div>
+                        </div>
+                        <div class="branch-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="branch-details">
+                                <h4>Baguio City</h4>
+                                <p>Ground Floor, Baguio Holiday Villas, Legarda Road, Baguio City</p>
+                                <p><strong>Contact:</strong> (074) 442-9866</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="branch-region">
+                    <h3>Visayas & Mindanao Branches</h3>
+                    <div class="branch-list">
+                        <div class="branch-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="branch-details">
+                                <h4>Cebu - Cebu Business Park</h4>
+                                <p>Ground Floor, TGU Tower, Cebu Business Park, Cebu City</p>
+                                <p><strong>Contact:</strong> (032) 268-0108</p>
+                            </div>
+                        </div>
+                        <div class="branch-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="branch-details">
+                                <h4>Davao - JP Laurel</h4>
+                                <p>Ground Floor, Landco Corporate Center, JP Laurel Avenue, Davao City</p>
+                                <p><strong>Contact:</strong> (082) 221-1301</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="branch-finder">
+                <h3>Find More Branches</h3>
+                <p>For a complete list of branches and ATMs, you can also visit the <a href="https://www.aub.com.ph/branch" target="_blank">official AUB branch locator</a>.</p>
+            </div>
+        </section>
+
+        <!-- Scope of Business -->
+        <section id="business-scope" class="section hidden">
+            <h2>Scope of Business/Operation</h2>
+            <p>As a universal bank, AUB is authorized to exercise the following:</p>
+            <ol>
+                <li>Powers of an investment house, including securities underwriting and trading, loan syndication, financial advisory, private placement of debt and equity securities, project finance and direct equity investment.</li>
+                <li>Power to invest in allied and non-allied enterprises, subject to regulatory caps on the amount of investment relative to the Bank's capital and ownership percentage.</li>
+                <li>Commercial banking operations including deposit-taking, lending, trade finance, and foreign exchange.</li>
+                <li>Digital banking services and technological innovations for both deposit-taking and lending businesses.</li>
+                <li>Trust, investment management, and fiduciary services through its trust products.</li>
+            </ol>
+        </section>
+
+        <!-- Products and Services -->
+        <section id="products-services" class="section hidden">
+            <h2>Products and Services</h2>
+            <div class="external-link">
+                <a href="https://www.aub.com.ph/aboutUs/ourBusiness" target="_blank">View All Products and Services <i class="fas fa-external-link-alt"></i></a>
+            </div>
+            
+            <h3>Deposits</h3>
+            <ul>
+                <li><a href="https://www.aub.com.ph/deposit/savings" target="_blank">Savings Account</a></li>
+                <li><a href="https://www.aub.com.ph/deposit/current" target="_blank">Current Account</a></li>
+                <li><a href="https://www.aub.com.ph/deposit/timeDeposit" target="_blank">Time Deposit</a></li>
+                <li><a href="https://www.aub.com.ph/deposit/otherCurrency" target="_blank">Other Currency Accounts</a></li>
+            </ul>
+            
+            <h3>Prepaid Accounts</h3>
+            <ul>
+                <li><a href="https://www.aub.com.ph/hellomoney" target="_blank">HelloMoney</a></li>
+                <li><a href="https://www.aub.com.ph/hellopagibig" target="_blank">Hello Pag-IBIG</a></li>
+            </ul>
+            
+            <h3>Loans</h3>
+            <ul>
+                <li><a href="https://www.aub.com.ph/loans/auto" target="_blank">Motor Vehicle Loans</a></li>
+                <li><a href="https://www.aub.com.ph/loans/home" target="_blank">Home Loans</a></li>
+                <li><a href="https://www.aub.com.ph/loans/salary" target="_blank">Salary Loans</a></li>
+                <li><a href="https://www.aub.com.ph/loans/commercial" target="_blank">Commercial Loans</a></li>
+            </ul>
+            
+            <h3>Investments</h3>
+            <ul>
+                <li><a href="https://www.aub.com.ph/investment/treasury" target="_blank">Treasury Products</a></li>
+                <li><a href="https://www.aub.com.ph/investment/trust" target="_blank">Trust Products</a></li>
+            </ul>
+            
+            <h3>Cash Management</h3>
+            <ul>
+                <li><a href="https://www.aub.com.ph/bizkit" target="_blank">BizKit</a></li>
+                <li><a href="https://www.aub.com.ph/bizkit/collection" target="_blank">Collection Products</a></li>
+                <li><a href="https://www.aub.com.ph/bizkit/disbursement" target="_blank">Disbursement Products</a></li>
+                <li><a href="https://www.aub.com.ph/bizkit/reconciliation" target="_blank">Reconciliation Product</a></li>
+                <li><a href="https://www.aub.com.ph/bizkit/tc" target="_blank">Terms and Conditions</a></li>
+            </ul>
+            
+            <h3>Other Services</h3>
+            <ul>
+                <li><a href="https://online.aub.ph/creditcards" target="_blank">Credit Cards</a></li>
+                <li><a href="https://www.aub.com.ph/remittance" target="_blank">Remittance</a></li>
+                <li><a href="https://www.aub.com.ph/tradeFinancing" target="_blank">Trade Financing</a></li>
+                <li><a href="https://www.aub.com.ph/propertiesForSale" target="_blank">Properties for Sale</a></li>
+                <li><a href="https://www.aub.com.ph/leasing" target="_blank">AUB Leasing</a></li>
+                <li><a href="https://www.aub.com.ph/applyADA" target="_blank">ADA Facility</a></li>
+                <li><a href="https://online.aub.ph/aubpaymate" target="_blank">AUB PayMate</a></li>
+                <li><a href="https://www.aub.com.ph/instapay" target="_blank">InstaPay</a></li>
+                <li><a href="https://www.aub.com.ph/pesonet" target="_blank">PESONet</a></li>
+                <li><a href="https://www.aub.com.ph/qrph" target="_blank">QRPh</a></li>
+            </ul>
+        </section>
+
+        <!-- Financial Highlights -->
+        <section id="financial-highlights" class="section hidden">
+            <h2>Financial Highlights</h2>
+            <div class="external-link">
+                <a href="https://www.aub.com.ph/ir/financial-highlights" target="_blank">View Complete Financial Highlights <i class="fas fa-external-link-alt"></i></a>
+            </div>
+            
+            <h3>Annual Reports</h3>
+            <div class="annual-reports">
+                <div class="report-item">
+                    <a href="https://www.aub.com.ph/investorRelationsServlet?fileDir=/aubph/InvestorRelations/AnnualReports/&fileName=AR%202023.pdf" target="_blank" class="btn">
+                        <i class="fas fa-file-pdf"></i> 2023 Annual Report
+                    </a>
+                </div>
+                <div class="report-item">
+                    <a href="https://www.aub.com.ph/investorRelationsServlet?fileDir=/aubph/InvestorRelations/AnnualReports/&fileName=AUB%20Annual%20Report%202022.pdf" target="_blank" class="btn">
+                        <i class="fas fa-file-pdf"></i> 2022 Annual Report
+                    </a>
+                </div>
+                <div class="report-item">
+                    <a href="https://www.aub.com.ph/investorRelationsServlet?fileDir=/aubph/InvestorRelations/AnnualReports/&fileName=Asia%20United%20Bank%20(AUB)%20Annual%20Report%202021.pdf" target="_blank" class="btn">
+                        <i class="fas fa-file-pdf"></i> 2021 Annual Report
+                    </a>
+                </div>
+                <div class="report-item">
+                    <a href="https://www.aub.com.ph/investorRelationsServlet?fileDir=/aubph/InvestorRelations/AnnualReports/&fileName=aub_annualreport2020.pdf" target="_blank" class="btn">
+                        <i class="fas fa-file-pdf"></i> 2020 Annual Report
+                    </a>
+                </div>
+            </div>
+            
+            <table>
+                <tr>
+                    <th>Consolidated</th>
+                    <th>2023</th>
+                    <th>2022</th>
+                    <th>2021</th>
+                    <th>2020</th>
+                </tr>
+                <tr>
+                    <td>Total Assets (in PhP billions)</td>
+                    <td>355</td>
+                    <td>340</td>
+                    <td>318</td>
+                    <td>315</td>
+                </tr>
+                <tr>
+                    <td>% growth</td>
+                    <td>4%</td>
+                    <td>7%</td>
+                    <td>1%</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Net Income (in PhP millions)</td>
+                    <td>8,261</td>
+                    <td>6,279</td>
+                    <td>4,068</td>
+                    <td>3,030</td>
+                </tr>
+                <tr>
+                    <td>% growth</td>
+                    <td>32%</td>
+                    <td>54%</td>
+                    <td>34%</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Branches*</td>
+                    <td>265</td>
+                    <td>260</td>
+                    <td>264</td>
+                    <td>267</td>
+                </tr>
+                <tr>
+                    <td>% growth</td>
+                    <td>2%</td>
+                    <td>-2%</td>
+                    <td>-2%</td>
+                    <td>-</td>
+                </tr>
+            </table>
+            <p>*Includes micro-banking offices</p>
+            
+            <p>In 2024, AUB posted a consolidated net income of P11.3 billion, 36% more than the 2023 level of P8.3 billion, representing a 21% Compounded Annual Growth Rate (CAGR) since AUB became a publicly listed universal bank in 2013.</p>
+        </section>
+
+        <!-- Awards and Recognition -->
+        <section id="awards" class="section hidden">
+            <h2>Awards and Recognition</h2>
+            <div class="external-link">
+                <a href="https://www.aub.com.ph/aboutUs/awards" target="_blank">View All Awards and Recognition <i class="fas fa-external-link-alt"></i></a>
+            </div>
+            
+            <div class="external-link">
+                <a href="https://www.aub.com.ph/announce" target="_blank">View Latest Award Announcements <i class="fas fa-external-link-alt"></i></a>
+            </div>
+            
+            <ul>
+                <li><strong>2024:</strong> J.P. Morgan recognition for high-quality performance in funds transfer operations</li>
+                <li><strong>2023:</strong> CFA Society Philippines - AUB's Global Dollar Fund (GDF) recognized among country's 20 best managed funds in the Dollar Medium-Term Bond Fund category (ninth award since 2016)</li>
+                <li><strong>2023:</strong> CFA Society Philippines - AUB's Peso Investment Fund (PIF) recognized among country's 20 best managed funds in the Peso Medium-Term Bond Fund category (second award since 2018)</li>
+                <li><strong>2022:</strong> AUB recognized as one of the fastest-growing local banks in terms of compounded annual growth (CAGR)</li>
+                <li><strong>2021:</strong> Recognized for substantial growth in digital banking adoption</li>
+            </ul>
+        </section>
+
+        <!-- Organizational Structure -->
+        <section id="org-structure" class="section hidden">
+            <h2>Organizational Structure</h2>
+            <div class="external-link">
+                <a href="https://www.aub.com.ph/aboutUs/company" target="_blank">View Official Organization Structure <i class="fas fa-external-link-alt"></i></a>
+            </div>
+            
+            <div class="external-link">
+                <a href="https://www.aub.com.ph/resources/images/aboutUs/AUB-Org-Chart_033122.webp" target="_blank">View AUB Organizational Chart <i class="fas fa-external-link-alt"></i></a>
+            </div>
+            
+            <div class="org-chart-container">
+                <div class="org-chart">
+                    <div class="org-level board-level">
+                        <div class="org-box">
+                            <h3>Board of Directors</h3>
+                            <p>Chairman: Jonathan C. Ng</p>
+                        </div>
+                    </div>
+                    
+                    <div class="org-level">
+                        <div class="org-box">
+                            <h3>Office of the President</h3>
+                            <p>President & CEO: Manuel A. Gomez</p>
+                            <p>Vice Chairman: Abraham T. Co</p>
+                        </div>
+                    </div>
+                    
+                    <div class="org-level exec-level">
+                        <div class="org-box">
+                            <h3>Executive Management</h3>
+                            <p>Chief Transformation Officer: Jacob C. Ng</p>
+                            <p>Executive Vice Presidents</p>
+                        </div>
+                    </div>
+                    
+                    <div class="org-level department-level">
+                        <div class="org-box">
+                            <h3>Operational Departments</h3>
+                        </div>
+                        <div class="org-box">
+                            <h3>Support Departments</h3>
+                        </div>
+                        <div class="org-box">
+                            <h3>Control Units</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="org-level branch-level">
+                        <div class="org-box">
+                            <h3>Branch Banking</h3>
+                            <p>265 Branches Nationwide</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsidiaries-org">
+                <h3>AUB Group Structure</h3>
+                <p>Asia United Bank Corporation heads the AUB Group, which includes the following subsidiaries:</p>
+                <ul>
+                    <li>Rural Bank of Angeles (99.54% ownership)</li>
+                    <li>Cavite United Rural Bank (100.00% ownership)</li>
+                    <li>Asia United Leasing and Finance Corp (39.00% ownership)</li>
+                </ul>
+            </div>
+            
+            <p>The bank follows a standard corporate governance structure with the Board of Directors at the top providing strategic direction, followed by the executive management who handles day-to-day operations.</p>
+            
+            <p>For more detailed organizational structure information, please refer to the <a href="https://www.aub.com.ph/aboutUs/company" target="_blank">official AUB company page</a>.</p>
+        </section>
+
+        <!-- Board of Directors -->
+        <section id="board-directors" class="section hidden">
+            <h2>Board of Directors</h2>
+            <div class="external-link">
+                <a href="https://www.aub.com.ph/aboutUs/board-of-directors" target="_blank">View Complete Board Profiles <i class="fas fa-external-link-alt"></i></a>
+            </div>
+            
+            <div class="external-link">
+                <a href="https://www.aub.com.ph/aboutUs/company#mgmt" target="_blank">View Official Board & Management Page <i class="fas fa-external-link-alt"></i></a>
+            </div>
+            
+            <div class="profile-card">
+                <div class="profile-img-container">
+                    <img src="https://www.cmgassets.com/s3fs-public/styles/opengraph/public/2023-07/chairman-jonathan-c.-ng.jpg?h=22cdeff8&itok=rMYA4SMI" alt="Jonathan C. Ng" class="profile-img">
+                </div>
+                <div class="profile-info">
+                    <h3>Jonathan C. Ng</h3>
+                    <p><strong>Position:</strong> Chairman & Director</p>
+                    <p>Mr. Ng is also the President of the Rebisco Group of Companies, Inc.</p>
+                </div>
+            </div>
+            
+            <div class="profile-card">
+                <div class="profile-img-container">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRueSulqQ573z-HIplNDca9Jo8sGuZBbfP9Lw&s" alt="Abraham T. Co" class="profile-img">
+                </div>
+                <div class="profile-info">
+                    <h3>Abraham T. Co</h3>
+                    <p><strong>Position:</strong> Vice Chairman & Director</p>
+                </div>
+            </div>
+            
+            <div class="profile-card">
+                <div class="profile-img-container">
+                    <img src="https://www.manilatimes.net/uploads/imported_images/uploads/2019/06/06_AUB-Manuel-A20190609.jpg" alt="Manuel A. Gomez" class="profile-img">
+                </div>
+                <div class="profile-info">
+                    <h3>Manuel A. Gomez</h3>
+                    <p><strong>Position:</strong> President & Director</p>
+                </div>
+            </div>
+            
+            <div class="profile-card">
+                <div class="profile-img-container">
+                    <img src="https://media.licdn.com/dms/image/v2/C5603AQEshwX7cPn1Kg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1517777771389?e=2147483647&v=beta&t=qDdd_q1k-eKYsbDoW_l5qn4YU-E--GAGbVWKDCpsKjY" alt="George T. Chua" class="profile-img">
+                </div>
+                <div class="profile-info">
+                    <h3>George T. Chua</h3>
+                    <p><strong>Position:</strong> Director</p>
+                </div>
+            </div>
+            
+            <div class="profile-card">
+                <div class="profile-img-container">
+                    <img src="data:image/jpeg;base64,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" alt="Atty. Lily K. Gruba" class="profile-img">
+                </div>
+                <div class="profile-info">
+                    <h3>Atty. Lily K. Gruba</h3>
+                    <p><strong>Position:</strong> Director</p>
+                </div>
+            </div>
+            
+            <div class="profile-card">
+                <div class="profile-img-container">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRlJuccZceJo-DAeh_PnTFienl4Xbl75pDFA&s" alt="Jacob C. Ng" class="profile-img">
+                </div>
+                <div class="profile-info">
+                    <h3>Jacob C. Ng</h3>
+                    <p><strong>Position:</strong> Chief Transformation Officer, Director, EVP, Head of Branch Banking</p>
+                </div>
+            </div>
+            
+            <div class="profile-card">
+                <div class="profile-img-container">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEQCBGmjCdwrl751FiZYCGhfpLs75uOspOlA&s" alt="Acmad Rizaldy P Moti" class="profile-img">
+                </div>
+                <div class="profile-info">
+                    <h3>Acmad Rizaldy P Moti</h3>
+                    <p><strong>Position:</strong> Independent Director</p>
+                </div>
+            </div>
+            
+            <div class="profile-card">
+                <div class="profile-img-container">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcKzihz5Ednpaa8w1i3pPLTL9qXeSjgAhzbg&s" alt="Teresita Ang See" class="profile-img">
+                </div>
+                <div class="profile-info">
+                    <h3>Teresita Ang See</h3>
+                    <p><strong>Position:</strong> Independent Director</p>
+                </div>
+            </div>
+            
+            <div class="profile-card">
+                <div class="profile-img-container">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGZmip-odE6F5Y284b9QfKFXtxDaiJ8ArdPQ&s" alt="Ret. Justice Adolfo S. Azcuna" class="profile-img">
+                </div>
+                <div class="profile-info">
+                    <h3>Ret. Justice Adolfo S. Azcuna</h3>
+                    <p><strong>Position:</strong> Senior Adviser to the Board</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Management Committee -->
+        <section id="management-committee" class="section hidden">
+            <h2>Management Committee</h2>
+            <div class="external-link">
+                <a href="https://www.aub.com.ph/aboutUs/management" target="_blank">View Complete Management Committee <i class="fas fa-external-link-alt"></i></a>
+            </div>
+            
+            <div class="external-link">
+                <a href="https://www.aub.com.ph/aboutUs/company#mgmt" target="_blank">View Official Board & Management Page <i class="fas fa-external-link-alt"></i></a>
+            </div>
+            
+            <h3>Executive Management</h3>
+            <div class="team-grid">
+                <div class="executive-card">
+                    <div class="exec-img">
+                        <img src="https://i.prcdn.co/img?regionKey=5%2BBLCH%2FBZ%2Ff%2BmUgaZkdYtw%3D%3D" alt="Executive">
+                    </div>
+                    <div class="exec-info">
+                        <h4>Antonio V. Agcaoili, Jr.</h4>
+                        <p>Executive Vice President</p>
+                    </div>
+                </div>
+                
+                <div class="executive-card">
+                    <div class="exec-img">
+                        <img src="https://media.licdn.com/dms/image/v2/D5603AQGFnI5tK7Lg8Q/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1719754742092?e=2147483647&v=beta&t=x6ThAOLURHbimilpmE_ZFSKYG33qoupb7VWNIQ3EUjc" alt="Executive">
+                    </div>
+                    <div class="exec-info">
+                        <h4>Rainer T. Defante</h4>
+                        <p>Executive Vice President</p>
+                    </div>
+                </div>
+                
+                <div class="executive-card">
+                    <div class="exec-img">
+                        <img src="https://i.prcdn.co/img?regionKey=LpZH%2Ba70tuMHgJFKXutdZQ%3D%3D" alt="Executive">
+                    </div>
+                    <div class="exec-info">
+                        <h4>Jacob C. Ng</h4>
+                        <p>Executive Vice President</p>
+                    </div>
+                </div>
+                
+                <div class="executive-card">
+                    <div class="exec-img">
+                        <img src="https://media.licdn.com/dms/image/v2/D5622AQFh8tY1y-p8jA/feedshare-shrink_800/feedshare-shrink_800/0/1724975371116?e=2147483647&v=beta&t=IpEchdnqSGhFibpY5IrDIdDoWd6jHogI9n47CP4Y28o" alt="Executive">
+                    </div>
+                    <div class="exec-info">
+                        <h4>Wilfredo E. Rodriguez, Jr.</h4>
+                        <p>Executive Vice President</p>
+                    </div>
+                </div>
+                
+                <div class="executive-card">
+                    <div class="exec-img">
+                        <img src="https://cdn.theorg.com/a44e8051-b0ad-48a9-bb25-42847dd33df8_medium.jpg" alt="Executive">
+                    </div>
+                    <div class="exec-info">
+                        <h4>Ernesto T. Uy</h4>
+                        <p>Executive Vice President</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Senior Vice Presidents</h3>
+            <div class="management-list">
+                <div class="management-column">
+                    <div class="management-item">
+                        <div class="manager-img">
+                           
+                        </div>
+                        <div class="manager-info">
+                            <h4>Jill Mae J. Ang</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="management-item">
+                        <div class="manager-img">
+                            
+                        </div>
+                        <div class="manager-info">
+                            <h4>Emma Theresa M. Cabochan</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="management-item">
+                        <div class="manager-img">
+                          
+                        </div>
+                        <div class="manager-info">
+                            <h4>Andrew A. Chua</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="management-item">
+                        <div class="manager-img">
+                        </div>
+                        <div class="manager-info">
+                            <h4>Mariflor L. Cruz</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="management-item">
+                        <div class="manager-img">
+                        </div>
+                        <div class="manager-info">
+                            <h4>Rosario M. Dayrit</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="management-item">
+                        <div class="manager-img">
+                        </div>
+                        <div class="manager-info">
+                            <h4>Joselito R. Jacob</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="management-item">
+                        <div class="manager-img">
+                        </div>
+                        <div class="manager-info">
+                            <h4>Willy G. Ng</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="management-item">
+                        <div class="manager-img">
+                        </div>
+                        <div class="manager-info">
+                            <h4>Maria Teresa C. Ogbinar</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="management-column">
+                    <div class="management-item">
+                        <div class="manager-img">
+                        </div>
+                        <div class="manager-info">
+                            <h4>Cristina O. Pama</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="management-item">
+                        <div class="manager-img">
+                        </div>
+                        <div class="manager-info">
+                            <h4>Lela S. Quijano</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="management-item">
+                        <div class="manager-img">
+                        </div>
+                        <div class="manager-info">
+                            <h4>Soledad O. Reyes</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="management-item">
+                        <div class="manager-img">
+                        </div>
+                        <div class="manager-info">
+                            <h4>Albert T. Reyes</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="management-item">
+                        <div class="manager-img">
+                        </div>
+                        <div class="manager-info">
+                            <h4>Kristeen Ella M. Reyes</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="management-item">
+                        <div class="manager-img">
+                        </div>
+                        <div class="manager-info">
+                            <h4>Amelia S. Sison</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="management-item">
+                        <div class="manager-img">
+                        </div>
+                        <div class="manager-info">
+                            <h4>Catherine C. Uy</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="management-item">
+                        <div class="manager-img">
+                        </div>
+                        <div class="manager-info">
+                            <h4>Amelin S. Yao</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="management-note">For a complete list of management officials, please visit the <a href="https://www.aub.com.ph/aboutUs/company" target="_blank">official AUB company page</a>.</p>
+        </section>
+        
+        <!-- Team Section -->
+        <section id="team" class="section hidden">
+            <h2>Our Team</h2>
+            <p class="section-intro">Our team is the one who made this website possible.</p>
+            
+            <div class="team-container">
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="https://scontent.fceb6-1.fna.fbcdn.net/v/t39.30808-6/466463082_3887319451514216_8439813327015770156_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHnQ3Sq1wl0Wc76kKfPkHNKMnQ4qzFrje8ydDirMWuN78_wIVSNmKPw5N5Q02HcCBj0IYa83sj-JoTZnnCxlbBi&_nc_ohc=UX-icJwbS6AQ7kNvwHTRbtl&_nc_oc=AdlLTFoY-EdLh803g3PUP8HgUMfWmpKAasfU-MFGvVluKFm49z8D6JyQi5O8L0LfFMc&_nc_zt=23&_nc_ht=scontent.fceb6-1.fna&_nc_gid=pr_E7VJiSig-dQpW4Vg1bQ&oh=00_AfEpiUhTfQmoVnclaOQhtaIZpvZoOvAhNmckzxW-EQNkLw&oe=680BD7B9" alt="Vanessa Gail Chidrome" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                    </div>
+                    <h3>Vanessa Gail Chidrome</h3>
+                    <p>BSBA STUDENT</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="https://scontent.fcgy2-3.fna.fbcdn.net/v/t39.30808-1/492040963_122121651296745668_3339862505296129300_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=111&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeEjyWHcvZHOpL5nO5OadBY_hKFXDvd6-dmEoVcO93r52eoZZs62Tj8LfZo1Bu49yM3JeZxTLLd-8QaPg7kCnW1Y&_nc_ohc=QZE-m8XYmtgQ7kNvwF52-oz&_nc_oc=AdmyBFd3l3TrXGejsetSl35umE9bvBHb1hZXVFeGIkpztsn2vEDNI3zaO2IzpRBCMis&_nc_zt=24&_nc_ht=scontent.fcgy2-3.fna&_nc_gid=-I58XVSRzGYQbrN_WriF-w&oh=00_AfFFxy04P2r25x3-sPgTmCb-30N806kWE_pkHiEuo6NrWw&oe=680C0277" alt="Mary Grace Ocon" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                    </div>
+                    <h3>Mary Grace Ocon</h3>
+                    <p>BSBA STUDENT</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Capital Structure -->
+        <section id="capital-structure" class="section hidden">
+            <h2>Capital Structure</h2>
+            <div class="external-link">
+                <a href="https://www.aub.com.ph/aboutUs/company#share" target="_blank">View Capital Structure Information <i class="fas fa-external-link-alt"></i></a>
+            </div>
+            
+            <ul>
+                <li><strong>Capital Adequacy Ratio:</strong> AUB maintains a strong capital position with a CAR of 17.5%, well above the regulatory minimum of 10%.</li>
+                <li><strong>Ownership Structure:</strong> The bank has a diverse ownership base with institutional investors holding 65%, founding family members 25%, and public shareholders 10%.</li>
+                <li><strong>Regulatory Compliance:</strong> AUB adheres to Basel III requirements and maintains appropriate capital buffers for risk management.</li>
+                <li><strong>Dividend Policy:</strong> The bank has a consistent dividend payout ratio of 20-30% of net income, balancing shareholder returns with capital retention for growth.</li>
+            </ul>
+        </section>
+
+        <!-- Corporate Governance -->
+        <section id="corporate-governance" class="section hidden">
+            <h2>Corporate Governance</h2>
+            
+            <div class="external-link">
+                <a href="https://www.aubgroup.com.au/wp-content/uploads/2022/08/2022-AUB-Corporate-Governance-Statement-final.pdf" target="_blank">View Corporate Governance Statement <i class="fas fa-external-link-alt"></i></a>
+            </div>
+            
+            <ul>
+                <li><strong>Board Structure:</strong> AUB's Board consists of 11 directors, including 4 independent directors, ensuring diverse perspectives and objective governance.</li>
+                <li><strong>Committees:</strong> The Board operates through specialized committees including Audit, Risk Management, Corporate Governance, and Executive committees.</li>
+                <li><strong>Transparency:</strong> AUB adheres to strict disclosure policies and regularly publishes comprehensive corporate governance reports.</li>
+                <li><strong>Compliance:</strong> The bank maintains full compliance with BSP, SEC, and PSE regulations regarding corporate governance practices.</li>
+                <li><strong>Ethics Code:</strong> A comprehensive Code of Ethics guides behavior of all employees and executives, with strict enforcement mechanisms.</li>
+            </ul>
+        </section>
+
+        <!-- Corporate Social Responsibility -->
+        <section id="csr" class="section hidden">
+            <h2>Corporate Social Responsibility</h2>
+            
+            <div class="external-link">
+                <a href="https://www.aub.com.ph/aboutUs/company" target="_blank">View Corporate Social Responsibility <i class="fas fa-external-link-alt"></i></a>
+            </div>
+            
+            <ul>
+                <li><strong>Community Development:</strong> AUB actively supports education, healthcare, and livelihood programs in underserved communities across the Philippines.</li>
+                <li><strong>Financial Literacy:</strong> The bank conducts regular financial education programs to promote responsible financial management among students and adults.</li>
+                <li><strong>Environmental Initiatives:</strong> AUB implements sustainable practices including paperless transactions, energy conservation, and waste reduction programs.</li>
+                <li><strong>Disaster Response:</strong> The bank provides emergency relief and rehabilitation assistance to communities affected by natural disasters.</li>
+                <li><strong>Employee Volunteerism:</strong> AUB encourages staff participation in community service through its employee volunteer program.</li>
+            </ul>
+        </section>
+
+        <!-- Financial Statements -->
+        <section id="financial-statements" class="section hidden">
+            <h2>Financial Statement Reports (2021-2023)</h2>
+            <div class="external-link">
+                <a href="https://www.aub.com.ph/ir/" target="_blank">View Complete Financial Statements <i class="fas fa-external-link-alt"></i></a>
+            </div>
+            
+            <p>For detailed financial statements, please visit AUB's Investor Relations page: <a href="https://www.aub.com.ph/ir/" target="_blank">https://www.aub.com.ph/ir/</a></p>
+            
+            <h3>Key Financial Indicators</h3>
+            <table>
+                <tr>
+                    <th>Consolidated (in PhP billions)</th>
+                    <th>2023</th>
+                    <th>2022</th>
+                    <th>2021</th>
+                </tr>
+                <tr>
+                    <td>Total Assets</td>
+                    <td>355</td>
+                    <td>340</td>
+                    <td>318</td>
+                </tr>
+                <tr>
+                    <td>Net Income</td>
+                    <td>8.26</td>
+                    <td>6.28</td>
+                    <td>4.07</td>
+                </tr>
+                <tr>
+                    <td>Return on Equity</td>
+                    <td>18.6%</td>
+                    <td>~15%</td>
+                    <td>~12%</td>
+                </tr>
+                <tr>
+                    <td>Return on Assets</td>
+                    <td>2.4%</td>
+                    <td>~2%</td>
+                    <td>~1.3%</td>
+                </tr>
+            </table>
+        </section>
+        
+        <!-- References Section -->
+        <section id="references" class="section hidden">
+            <h2>References</h2>
+            <div class="references-container">
+                <div class="reference-item">
+                    <a href="https://www.aub.com.ph/" target="_blank">AUB Official Website</a>
+                </div>
+                <div class="reference-item">
+                    <a href="https://www.aub.com.ph/aboutUs/company" target="_blank">AUB Company Profile</a>
+                </div>
+                <div class="reference-item">
+                    <a href="https://www.aub.com.ph/ir/" target="_blank">AUB Investor Relations</a>
+                </div>
+                <div class="reference-item">
+                    <a href="https://www.linkedin.com/company/asia-united-bank-aub" target="_blank">AUB LinkedIn Profile</a>
+                </div>
+                <div class="reference-item">
+                    <a href="https://www.bsp.gov.ph/" target="_blank">Bangko Sentral ng Pilipinas (BSP)</a>
+                </div>
+                <div class="reference-item">
+                    <a href="https://www.pse.com.ph/company-information-AUB/" target="_blank">Philippine Stock Exchange</a>
+                </div>
+                <div class="reference-item">
+                    <a href="https://en.wikipedia.org/wiki/Asia_United_Bank" target="_blank">Wikipedia - Asia United Bank</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Disclaimer Section -->
+        <section id="disclaimer" class="section hidden">
+            <h2>Disclaimer</h2>
+            <div class="disclaimer">
+                <div class="disclaimer-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="disclaimer-content">
+                    <p><strong>Educational Purposes Only:</strong> This website was created for educational purposes only. The information contained herein has been compiled from various public sources and the official AUB website for academic research and learning.</p>
+                    <p>This is not an official website of Asia United Bank Corporation (AUB). All trademarks, logos, and brand names are the property of their respective owners. All company, product and service names used on this website are for identification purposes only.</p>
+                    <p>The creators of this website are not affiliated with, endorsed by, or in any way officially connected with Asia United Bank Corporation or any of its subsidiaries or affiliates.</p>
+                    <p>The information provided on this website is intended to provide general information only and does not constitute professional financial advice. Users should consult with qualified financial advisors before making any financial decisions.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Add some additional CSS to head
+        let additionalStyles = `
+            .company-intro {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .company-detail {
+                display: flex;
+                align-items: center;
+                background-color: var(--accent-color);
+                padding: 15px;
+                border-radius: 8px;
+            }
+            
+            .company-detail i {
+                margin-right: 10px;
+                color: var(--primary-color);
+            }
+            
+            .hero-banner {
+                background: linear-gradient(135deg, rgba(0, 51, 102, 0.05) 0%, rgba(26, 77, 128, 0.1) 100%);
+                padding: 30px;
+                border-radius: 12px;
+                text-align: center;
+                margin: 20px 0;
+            }
+            
+            .slogan {
+                font-size: 1.5rem;
+                font-family: 'Playfair Display', serif;
+                color: var(--primary-color);
+                margin-bottom: 10px;
+            }
+            
+            .highlight {
+                color: var(--secondary-color);
+            }
+            
+            .timeline {
+                position: relative;
+                max-width: 800px;
+                margin: 30px auto;
+            }
+            
+            .timeline::after {
+                content: '';
+                position: absolute;
+                width: 4px;
+                background-color: var(--accent-color);
+                top: 0;
+                bottom: 0;
+                left: 100px;
+                margin-left: -2px;
+            }
+            
+            .timeline-item {
+                position: relative;
+                margin-bottom: 50px;
+                padding-left: 150px;
+            }
+            
+            .timeline-dot {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                left: 100px;
+                background-color: var(--secondary-color);
+                border-radius: 50%;
+                z-index: 1;
+                margin-left: -10px;
+                box-shadow: 0 0 0 5px rgba(240, 199, 94, 0.2);
+            }
+            
+            .timeline-date {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 90px;
+                text-align: right;
+                font-weight: 600;
+                color: var(--primary-color);
+                font-size: 1.1rem;
+            }
+            
+            .timeline-content {
+                padding: 20px;
+                background-color: white;
+                border-radius: 8px;
+                box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+                position: relative;
+            }
+            
+            .timeline-content h3 {
+                margin-top: 0;
+                color: var(--primary-color);
+            }
+            
+            .foundation-info {
+                background-color: rgba(232, 240, 254, 0.5);
+                padding: 20px;
+                border-radius: 8px;
+                margin-top: 30px;
+                border-left: 4px solid var(--primary-light);
+            }
+            
+            .profile-intro {
+                margin-bottom: 30px;
+            }
+            
+            .stat-highlight {
+                background: linear-gradient(135deg, rgba(0, 51, 102, 0.05) 0%, rgba(26, 77, 128, 0.1) 100%);
+                border-radius: 8px;
+                padding: 20px;
+                text-align: center;
+                margin: 20px 0;
+            }
+            
+            .stat-number {
+                font-size: 3rem;
+                color: var(--primary-color);
+                font-weight: 700;
+                line-height: 1;
+                font-family: 'Playfair Display', serif;
+            }
+            
+            .stat-label {
+                display: block;
+                font-size: 1.1rem;
+                color: var(--text-color);
+                margin-top: 5px;
+            }
+            
+            .ownership-percentage {
+                background-color: rgba(0, 51, 102, 0.08);
+                padding: 2px 8px;
+                border-radius: 4px;
+                font-weight: 500;
+            }
+            
+            .vision-container, .mission-container {
+                display: flex;
+                margin-bottom: 30px;
+                background-color: white;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            }
+            
+            .vision-icon, .mission-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100px;
+                background-color: var(--primary-color);
+                color: white;
+                font-size: 2rem;
+            }
+            
+            .vision-content, .mission-content {
+                padding: 20px;
+                flex: 1;
+            }
+            
+            .values-container {
+                margin-top: 40px;
+            }
+            
+            .values-grid {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                gap: 20px;
+                margin-top: 20px;
+            }
+            
+            .value-item {
+                flex: 1 1 calc(20% - 20px);
+                min-width: 150px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .value-icon {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: var(--primary-color);
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.5rem;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+            
+            .value-name {
+                font-weight: 500;
+                color: var(--primary-color);
+            }
+            
+            .section-intro {
+                font-size: 1.1rem;
+                color: #666;
+                max-width: 700px;
+                margin: 0 auto 30px;
+                text-align: center;
+            }
+            
+            .social-links {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                margin-top: 15px;
+            }
+            
+            .social-link {
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                background-color: var(--accent-color);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--primary-color);
+                transition: var(--transition);
+            }
+            
+            .social-link:hover {
+                background-color: var(--primary-color);
+                color: white;
+                transform: translateY(-3px);
+            }
+            
+            .references-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 20px;
+            }
+            
+            .reference-item {
+                background-color: white;
+                padding: 15px;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+                transition: var(--transition);
+            }
+            
+            .reference-item:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+            
+            .disclaimer {
+                display: flex;
+                gap: 20px;
+                align-items: flex-start;
+            }
+            
+            .disclaimer-icon {
+                font-size: 2rem;
+                color: var(--secondary-color);
+                margin-top: 5px;
+            }
+            
+            .disclaimer-content {
+                flex: 1;
+            }
+            
+            @media (max-width: 768px) {
+                .timeline::after {
+                    left: 50px;
+                }
+                
+                .timeline-item {
+                    padding-left: 100px;
+                }
+                
+                .timeline-dot {
+                    left: 50px;
+                }
+                
+                .timeline-date {
+                    width: 45px;
+                    font-size: 0.9rem;
+                }
+                
+                .vision-container, .mission-container {
+                    flex-direction: column;
+                }
+                
+                .vision-icon, .mission-icon {
+                    width: 100%;
+                    height: 80px;
+                }
+                
+                .values-grid {
+                    justify-content: center;
+                }
+                
+                .disclaimer {
+                    flex-direction: column;
+                    text-align: center;
+                }
+                
+                .disclaimer-icon {
+                    margin: 0 auto 15px;
+                }
+            }
+            
+            /* Branch Styles */
+            .branches-container {
+                margin-top: 30px;
+            }
+            
+            .branch-region {
+                margin-bottom: 30px;
+            }
+            
+            .branch-list {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 20px;
+                margin-top: 15px;
+            }
+            
+            .branch-item {
+                display: flex;
+                background-color: white;
+                border-radius: 8px;
+                box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+                padding: 15px;
+                transition: var(--transition);
+            }
+            
+            .branch-item:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            }
+            
+            .branch-item i {
+                color: var(--secondary-color);
+                font-size: 1.5rem;
+                margin-right: 15px;
+                margin-top: 5px;
+            }
+            
+            .branch-details h4 {
+                margin: 0 0 10px 0;
+                color: var(--primary-color);
+            }
+            
+            .branch-details p {
+                margin: 5px 0;
+                font-size: 0.9rem;
+            }
+            
+            .branch-finder {
+                background-color: var(--accent-color);
+                border-radius: 8px;
+                padding: 20px;
+                margin-top: 30px;
+            }
+            
+            /* Organizational Structure Styles */
+            .org-chart-container {
+                margin: 30px 0;
+            }
+            
+            .org-chart {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+            
+            .org-level {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 20px;
+                position: relative;
+            }
+            
+            .org-level::after {
+                content: '';
+                position: absolute;
+                width: 2px;
+                height: 20px;
+                background-color: var(--primary-light);
+                bottom: -20px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .org-level:last-child::after {
+                display: none;
+            }
+            
+            .org-box {
+                background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+                color: white;
+                padding: 15px 20px;
+                border-radius: 8px;
+                text-align: center;
+                min-width: 200px;
+                box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+                margin: 0 10px;
+            }
+            
+            .org-box h3 {
+                color: white;
+                margin: 0 0 10px 0;
+                font-size: 1.1rem;
+            }
+            
+            .org-box p {
+                margin: 5px 0;
+                font-size: 0.9rem;
+                color: rgba(255, 255, 255, 0.9);
+            }
+            
+            .department-level {
+                justify-content: space-between;
+            }
+            
+            .subsidiaries-org {
+                background-color: var(--accent-color);
+                border-radius: 8px;
+                padding: 20px;
+                margin: 30px 0;
+            }
+            
+            /* Capital Structure Styles */
+            .capital-stats {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                gap: 20px;
+                margin: 30px 0;
+            }
+            
+            .capital-stat-item {
+                flex: 1;
+                min-width: 200px;
+                background: white;
+                border-radius: 8px;
+                padding: 20px;
+                text-align: center;
+                box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+                transition: var(--transition);
+            }
+            
+            .capital-stat-item:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            }
+            
+            .capital-stat-item .stat-number {
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: var(--primary-color);
+                font-family: 'Playfair Display', serif;
+                margin-bottom: 10px;
+            }
+            
+            .capital-stat-item .stat-label {
+                font-weight: 500;
+                color: var(--text-color);
+                margin-bottom: 5px;
+            }
+            
+            .capital-stat-item .stat-desc {
+                font-size: 0.9rem;
+                color: #666;
+            }
+            
+            .capital-structure-info {
+                margin: 30px 0;
+            }
+            
+            .capital-structure-info h3 {
+                border-left: 4px solid var(--secondary-color);
+                padding-left: 15px;
+            }
+            
+            /* Corporate Governance Styles */
+            .governance-intro {
+                background: linear-gradient(135deg, rgba(0, 51, 102, 0.05) 0%, rgba(26, 77, 128, 0.1) 100%);
+                padding: 20px;
+                border-radius: 8px;
+                margin-bottom: 30px;
+            }
+            
+            .governance-structure {
+                margin: 30px 0;
+            }
+            
+            .governance-item {
+                display: flex;
+                margin-bottom: 25px;
+                background-color: white;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            }
+            
+            .governance-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 80px;
+                background-color: var(--primary-color);
+                color: white;
+                font-size: 1.8rem;
+            }
+            
+            .governance-content {
+                padding: 20px;
+                flex: 1;
+            }
+            
+            .governance-content h4 {
+                margin: 0 0 10px 0;
+                color: var(--primary-color);
+            }
+            
+            .governance-content ul {
+                margin-top: 10px;
+            }
+            
+            .governance-principles {
+                margin: 30px 0;
+            }
+            
+            .principles-grid {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                gap: 15px;
+                margin-top: 20px;
+            }
+            
+            .principle-item {
+                flex: 1 1 calc(20% - 15px);
+                min-width: 120px;
+                text-align: center;
+            }
+            
+            .principle-icon {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: var(--primary-color);
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.2rem;
+                font-weight: 600;
+                margin: 0 auto 10px;
+            }
+            
+            .principle-name {
+                font-weight: 500;
+            }
+            
+            .governance-policies {
+                background-color: var(--accent-color);
+                border-radius: 8px;
+                padding: 20px;
+                margin: 30px 0;
+            }
+            
+            .governance-policies ul {
+                margin-top: 15px;
+            }
+            
+            @media (max-width: 768px) {
+                .branch-list,
+                .capital-stats,
+                .principles-grid {
+                    grid-template-columns: 1fr;
+                }
+                
+                .governance-item {
+                    flex-direction: column;
+                }
+                
+                .governance-icon {
+                    width: 100%;
+                    height: 60px;
+                }
+                
+                .org-level {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                
+                .org-box {
+                    margin-bottom: 15px;
+                    width: 100%;
+                }
+                
+                .department-level {
+                    flex-direction: column;
+                }
+            }
+        `;
+        
+        let styleElement = document.createElement('style');
+        styleElement.textContent = additionalStyles;
+        document.head.appendChild(styleElement);
+        
+        // Show company info section by default
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('company-info').classList.remove('hidden');
+            
+            // Add active class to first menu item
+            document.querySelector('.menu li').classList.add('active');
+            
+            // Add subtle scroll animation
+            window.addEventListener('scroll', function() {
+                const scrollPosition = window.scrollY;
+                document.querySelectorAll('.section:not(.hidden)').forEach(section => {
+                    const elements = section.querySelectorAll('h1, h2, h3, p, table, .profile-card, .team-member');
+                    elements.forEach((element, index) => {
+                        const elementPosition = element.getBoundingClientRect().top + scrollPosition;
+                        const windowHeight = window.innerHeight;
+                        if (scrollPosition > elementPosition - windowHeight + 100) {
+                            setTimeout(() => {
+                                element.classList.add('animated');
+                            }, index * 100);
+                        }
+                    });
+                });
+            });
+            
+            // Add hover effects to interactive elements
+            document.querySelectorAll('.profile-card, .team-member, .reference-item').forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.boxShadow = '0 8px 20px rgba(0,0,0,0.1)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 3px 10px rgba(0,0,0,0.05)';
+                });
+            });
+        });
+        
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Show selected section with animation
+            const targetSection = document.getElementById(sectionId);
+            targetSection.classList.remove('hidden');
+            targetSection.style.opacity = '0';
+            targetSection.style.transform = 'translateY(20px)';
+            
+            // Trigger reflow
+            void targetSection.offsetWidth;
+            
+            // Add animation
+            targetSection.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            targetSection.style.opacity = '1';
+            targetSection.style.transform = 'translateY(0)';
+            
+            // Update active state in menu
+            const menuItems = document.querySelectorAll('.menu li');
+            menuItems.forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Find and set active menu item
+            const activeMenuItem = document.querySelector(`.menu li[onclick="showSection('${sectionId}')"]`);
+            if (activeMenuItem) {
+                activeMenuItem.classList.add('active');
+            }
+            
+            // Scroll to top
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            
+            // Add animation to elements inside the section
+            setTimeout(() => {
+                const elements = targetSection.querySelectorAll('h1, h2, h3, p, table, .profile-card, .team-member');
+                elements.forEach((element, index) => {
+                    setTimeout(() => {
+                        element.classList.add('animated');
+                    }, index * 100);
+                });
+            }, 300);
+        }
+        
+        // Add a little interactive surprise
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add a floating button for quick navigation to top
+            const floatingButton = document.createElement('div');
+            floatingButton.className = 'floating-button';
+            floatingButton.innerHTML = '<i class="fas fa-chevron-up"></i>';
+            document.body.appendChild(floatingButton);
+            
+            // Show/hide the button based on scroll position
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    floatingButton.classList.add('visible');
+                } else {
+                    floatingButton.classList.remove('visible');
+                }
+            });
+            
+            // Scroll to top when clicked
+            floatingButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    
+    <style>
+        /* Additional styles for animations and enhancements */
+        .animated {
+            animation: fadeInUp 0.6s forwards;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .floating-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .floating-button.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .floating-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Enhance overall look */
+        .section {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--secondary-color) 0%, transparent 100%);
+            opacity: 0.7;
+        }
+        
+        h1, h2, h3 {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        p, table, .profile-card, .team-member {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .section:not(.hidden) h1,
+        .section:not(.hidden) h2,
+        .section:not(.hidden) h3,
+        .section:not(.hidden) p,
+        .section:not(.hidden) table,
+        .section:not(.hidden) .profile-card,
+        .section:not(.hidden) .team-member {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</body>
+</html> 
